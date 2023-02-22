@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace LineApp {
     class LineDatabase {
         private Random _random = new Random();
-        private int RandomInt { get => _random.Next(-30, 61);}
+        private int RandomInt { get => _random.Next(-99, 99);}
 
         public List<Line> Lines { get; private set; }
 

@@ -36,9 +36,10 @@ namespace LineApp
             this.resetButton = new System.Windows.Forms.Button();
             this.sortButton = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.searchBox = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.searchTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.lineGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchBox)).BeginInit();
             this.SuspendLayout();
             // 
             // lineGridView
@@ -97,19 +98,41 @@ namespace LineApp
             this.sortButton.UseVisualStyleBackColor = true;
             this.sortButton.Click += new System.EventHandler(this.sortButton_Click);
             // 
-            // searchBox
+            // label1
             // 
-            this.searchBox.Location = new System.Drawing.Point(12, 275);
-            this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(120, 23);
-            this.searchBox.TabIndex = 6;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(138, 277);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 15);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Поиск";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(138, 307);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 15);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Тип сортировки";
+            // 
+            // searchTextBox
+            // 
+            this.searchTextBox.Location = new System.Drawing.Point(12, 274);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.Size = new System.Drawing.Size(121, 23);
+            this.searchTextBox.TabIndex = 9;
+            this.searchTextBox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
+            this.searchTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.searchTextBox_KeyPress);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.searchBox);
+            this.Controls.Add(this.searchTextBox);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.sortButton);
             this.Controls.Add(this.resetButton);
             this.Controls.Add(this.onlyPositive);
@@ -118,8 +141,8 @@ namespace LineApp
             this.Name = "MainForm";
             this.Text = "LineApp";
             ((System.ComponentModel.ISupportInitialize)(this.lineGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchBox)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -131,7 +154,9 @@ namespace LineApp
         private System.Windows.Forms.Button resetButton;
         private System.Windows.Forms.Button sortButton;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.NumericUpDown searchBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox searchTextBox;
     }
 }
 

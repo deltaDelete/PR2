@@ -17,7 +17,6 @@ namespace LineApp
         {
             InitializeComponent();
 
-            searchBox.Controls[0].Visible = false;
             comboBox1.SelectedIndex = 0;
 
             _lineDb = new LineDatabase();
@@ -49,6 +48,23 @@ namespace LineApp
                     .ThenByDescending(x => x.Point1.y)
                     .ThenByDescending(x => x.Point2.y).ToList();
             }
+        }
+
+        private void searchTextBox_TextChanged(object sender, EventArgs e) {
+            lineGridView.DataSource = _lineDb.Lines.Where(x =>
+                x.Point1.ToString().Contains(searchTextBox.Text)
+                || x.Point2.ToString().Contains(searchTextBox.Text)
+            ).ToList();
+        }
+
+        private void searchTextBox_KeyPress(object sender, KeyPressEventArgs e) {
+            e.Handled = (!char.IsNumber(e.KeyChar)
+                && e.KeyChar != '\b')
+                || e.KeyChar == '/'
+                || e.KeyChar == '*'
+                || e.KeyChar == ','
+                || e.KeyChar == '.'
+                || e.KeyChar == '+';
         }
     }
 }
