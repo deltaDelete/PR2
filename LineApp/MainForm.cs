@@ -17,7 +17,7 @@ namespace LineApp
         {
             InitializeComponent();
 
-            comboBox1.SelectedIndex = 0;
+            comboBox1.SelectedIndex = -1;
 
             _lineDb = new LineDatabase();
             _lineDb.Initialize();
@@ -31,6 +31,9 @@ namespace LineApp
 
         private void resetButton_Click(object sender, EventArgs e) {
             lineGridView.DataSource = _lineDb.Lines;
+            comboBox1.SelectedIndex = -1;
+            searchTextBox.Text = string.Empty;
+
         }
 
         private void sortButton_Click(object sender, EventArgs e) {

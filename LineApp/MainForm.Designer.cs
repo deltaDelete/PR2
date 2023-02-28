@@ -67,7 +67,7 @@ namespace LineApp
             // 
             // onlyPositive
             // 
-            this.onlyPositive.Location = new System.Drawing.Point(12, 333);
+            this.onlyPositive.Location = new System.Drawing.Point(239, 273);
             this.onlyPositive.Name = "onlyPositive";
             this.onlyPositive.Size = new System.Drawing.Size(89, 23);
             this.onlyPositive.TabIndex = 2;
@@ -78,7 +78,7 @@ namespace LineApp
             // 
             // resetButton
             // 
-            this.resetButton.Location = new System.Drawing.Point(12, 362);
+            this.resetButton.Location = new System.Drawing.Point(12, 333);
             this.resetButton.Name = "resetButton";
             this.resetButton.Size = new System.Drawing.Size(89, 23);
             this.resetButton.TabIndex = 3;
@@ -89,7 +89,7 @@ namespace LineApp
             // 
             // sortButton
             // 
-            this.sortButton.Location = new System.Drawing.Point(12, 391);
+            this.sortButton.Location = new System.Drawing.Point(239, 303);
             this.sortButton.Name = "sortButton";
             this.sortButton.Size = new System.Drawing.Size(89, 23);
             this.sortButton.TabIndex = 4;
